@@ -2,8 +2,8 @@
 
 inputFile = open("gdem_all.txt", "r")
 # change to grab different area
-inputBounds = { "upperLeft": [-95,20],
-				"bottomRight": [-87, 13]}
+inputBounds = { "upperLeft": [-132, 50],
+				"bottomRight": [-88, 12]}
 
 outputFile = open("gdem_filtered.txt", "w")
 
@@ -20,7 +20,6 @@ for line in inputFile:
 	# check if tile should be included
 	include = longitude >= inputBounds["upperLeft"][0] and longitude <= inputBounds["bottomRight"][0] and latitude <= inputBounds["upperLeft"][1] and latitude >= inputBounds["bottomRight"][1]
 	if include:
-		print(line)
 		outputFile.write(line)
 
 outputFile.close()
